@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+For most developers, Node and Yarn is all you'll need.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. [Install Node](https://nodejs.org/en/download/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    - The **preferred** method of installing Node.js locally is via [Node Version Manager](https://github.com/creationix/nvm) (or NVM).
+        - NVM is available via [Homebrew](https://docs.brew.sh/Installation) as well:
+            - `$ brew update`
+            - `$ brew install nvm`
+            - `$ mkdir ~/.nvm`
+            - Depending on your shell:
+            - (`.bash_profile` example here): `$ echo "export NVM_DIR=~/.nvm\nsource $(brew --prefix nvm)/nvm.sh" >> ~/.bash_profile`
+            - (`.zshrc` example here): `$ echo "path+=('~/.nvm')\nexport PATH\nsource $(brew --prefix nvm)/nvm.sh" >> ~/.zshrc/n source ~/.zshrc`
+        - `$ nvm install 15.6.0 && nvm use 15.6.0`
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+2. [Install Yarn](https://yarnpkg.com/en/docs/install)
+3. Clone the [repo](https://github.com/Viome/viome-next) `$ git clone https://github.com/Viome/viome-next.git`
+4. Install Dependancies using `yarn install` in the workspace
+5. [Install EditorConfig Plugin for your IDE](https://editorconfig.org/#download)
+    - If you are using VS Code **preferred**, you can do the following for an enhanced workflow, Install the following:
+        - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+            - You may need to run `ESLint: Manage Library Execution` from the VSCode command palette and click Allow Everywhere.
+        - [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+            - You will need to disable the default linters. Instructions are availble at the provided link up above.
+        - [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
+        - [CSS Modules Syntax](https://marketplace.visualstudio.com/items?itemName=andrewleedham.vscode-css-modules)
+        - [SASS](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented)
+        - [SCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Yarn Commands
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+We're using [Yarn](https://yarnpkg.com/) to manage dependencies. Here are some Yarn commands you can run:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `yarn install` Install all project dependencies (this should be ran everytime you checkout or branch off `master` to make sure you have the latest dependancies)
+- `yarn next` starts Next.js in development mode at [localhost:3000](http://localhost:3000)
+- `yarn build` builds the application for production usage
+- `yarn start` starts a Next.js production server
+- `yarn lint` will run eslint and stylelint checking for formatting and errors

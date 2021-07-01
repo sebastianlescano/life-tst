@@ -1,0 +1,20 @@
+{
+    "editor.codeActionsOnSave": {
+        // For ESLint
+        "source.fixAll.eslint": true,
+        // For TSLint
+        "source.fixAll.tslint": true,
+        // For Stylelint
+        "source.fixAll.stylelint": true
+    },
+    "editor.tabSize": 2,
+    "editor.rulers": [
+        80
+    ],
+    "editor.formatOnSave": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "scss.validate": false,
+    "stylelint.packageManager": "yarn",
+    "px-to-rem.px-per-rem": 16
+}
