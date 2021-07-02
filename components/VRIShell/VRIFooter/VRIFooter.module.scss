@@ -1,0 +1,94 @@
+@import "../../../lib/styles/variables";
+@import "../../../lib/styles/common";
+
+.vriFooter {
+    background: #f3f3f4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 7.188rem 1.25rem;
+
+    img {
+        padding: 1.25rem;
+    }
+}
+
+.vriFooterNav {
+    margin-top: 5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    width: 330px;
+
+    ul {
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+
+        a {
+            color: $primary;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1;
+            display: block;
+            padding: 0.5rem 0 0.5rem 0;
+            font-family: $calibre-medium;
+        }
+    }
+}
+
+.vriFooterWrapper {
+    .vriCopyright {
+        display: none;
+    }
+}
+
+.vriCopyright {
+    margin: 3rem 0 0;
+    padding-left: 1.25rem;
+    font-size: 1rem;
+    font-family: $calibre;
+}
+
+@media only screen and (min-width: $breakpoint-desktop) {
+    .vriFooter {
+        flex-direction: column-reverse;
+    }
+
+    .vriFooterWrapper {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        img {
+            padding: 0;
+        }
+
+        .vriCopyright {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .vriFooterNav {
+        margin-top: 0;
+        margin-bottom: 5rem;
+        padding: 0;
+
+        ul {
+            flex-direction: row;
+        }
+
+        li {
+            margin-right: 1.875rem;
+        }
+    }
+
+    .vriCopyright {
+        display: none;
+    }
+}

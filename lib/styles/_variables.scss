@@ -1,0 +1,60 @@
+// COLORS
+$black:           #252535;
+$blue-dark:       #116789;
+$blue-light:      #47c8ed;
+$blue:            #2998C3;
+$charcoal:        #686b6f;
+$dark-gray:       #bbbcc4;
+$dark-purple:     #2a2d55;
+$darker-gray:     #676767;
+$darker-purple:   #1e213d;
+$error:           red;
+$faux-cadet-grey: #2a2d55;
+$font-gray:       #727484;
+$gold-dark:       #B17C0F;
+$gold:            #E3AA36;
+$gray-dark:       #e7e7eA;
+$gray:            #f3f3f4;
+$gray2:           #808080;
+$lighter-gray:    #fafafa;
+$primary:         #151833;
+$purple-dark:     #563496;
+$purple-gray:     #74758c;
+$purple:          #6D4AB0;
+$purple:          #5853a2;
+$red-dark:        #961535;
+$red:             #CA3550;
+$secondary-bright:#cbebe6;
+$secondary-dark:  #1F4855;
+$secondary-light: #009E82;
+$secondary:       #146464;
+$teal:            #1c8c85;
+$white-70:        rgba(255, 255, 255, 0.7);
+$white:           #fff;
+
+/* Shortcuts */
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+// FONTS
+$calibre:           "CalibreRegular", -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$calibre-thin:      "CalibreThin", -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$calibre-light:     "CalibreLight", -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$calibre-medium:    "CalibreMedium", -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$calibre-semibold:  "CalibreSemibold", -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$calibre-bold:      "CalibreBold", -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$tiempos:           "TiemposHeadlineRegular", serif;
+$tiempos-light:     "TiemposHeadlineLight", serif;
+$tiempos-medium:    "TiemposHeadlineMedium", serif;
+$tiempos-semibold:  "TiemposHeadlineSemibold", serif;
+$tiempos-bold:      "TiemposHeadlineBold", serif;
+$circularair-light: "CircularAir-Light";
+$circularair-book:  "CircularAir-Book";
+
+// BREAKPOINTS
+$breakpoint-sml:      367px;
+$breakpoint-mobile:   567px;
+$breakpoint-tablet:   768px;
+$breakpoint-desktop:  992px;
+$breakpoint-lg:       1200px;
+$breakpoint-xl:       1440px;

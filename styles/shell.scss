@@ -1,0 +1,196 @@
+@import "../lib/styles/variables";
+@import "../lib/styles/common";
+
+.vri {
+    &__columns {
+        &--one {
+            padding: 8em 1.250em;
+            max-width: 320px;
+            margin: auto;
+
+            @media screen and (min-width: $breakpoint-tablet) {
+                padding: inherit 2.5em;
+                max-width: 768px;
+            }
+
+            @media screen and (min-width: $breakpoint-desktop) {
+                padding: inherit 6.250em;
+                max-width: 992px;
+            }
+
+            @media screen and (min-width: $breakpoint-xl) {
+                padding: inherit 10.313em;
+                max-width: 1200px;
+            }
+        }
+
+        &--two {
+            margin: auto;
+            max-width: 1440px;
+
+            @media screen and (min-width: $breakpoint-desktop) {
+                align-items: flex-start;
+                display: flex;
+                padding: 10em 1.875em;
+                justify-content: space-between;
+            }
+
+            @media screen and (min-width: $breakpoint-xl) {
+                padding: 10em 0;
+            }
+
+            .vri__columns {
+                &--right {
+                    padding: 8em 1.250em;
+
+                    @media screen and (min-width: $breakpoint-tablet) {
+                        padding-left: 2.5em;
+                        padding-right: 2.5em;
+                    }
+
+                    @media screen and (min-width: $breakpoint-desktop) {
+                        padding: 0 0 0 6.250em;
+                    }
+
+                    @media screen and (min-width: $breakpoint-xl) {
+                        padding-right: 10.313em;
+                    }
+                }
+
+                &--left {
+                    @media screen and (min-width: $breakpoint-xl) {
+                        padding-left: 10.313em;
+                    }
+                }
+            }
+        }
+    }
+
+    &__site-nav {
+        border-bottom: 1px solid $dark-gray;
+        padding: 1.875em 1.375em;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            padding-left: 2.5em;
+            padding-right: 2.5em;
+        }
+
+        &__top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &--top {
+            display: none;
+        }
+
+        h6 {
+            font-size: 1.200em;
+        }
+
+        img {
+            transition: 0.4s;
+        }
+
+        button {
+            &:not(.collapsed) {
+                img {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                font-size: 1.500em;
+                line-height: 1;
+                margin-top: 1.875em;
+
+                a {
+                    color: $darker-purple;
+                    text-decoration: none;
+                    transition: .1s linear;
+
+                    &:hover, &.active {
+                        color: $purple;
+                    }
+                }
+            }
+        }
+
+        .navbar, button {
+            border: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        &--disabled {
+            border: none;
+            padding: 0;
+
+            .vri__site-nav__top {
+                justify-content: center;
+
+                h6 {
+                    font-size: 2.500em;
+                }
+
+                img {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__columns--left {
+        .navbar {
+            &-collapse {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            flex: 0 0 calc(210 / 932 * 100%);
+            position: sticky;
+            top: 20px;
+
+            .vri__site-nav {
+                border: none;
+                padding: 0;
+
+                &--top {
+                    display: inline;
+                    font-family: $calibre-semibold;
+                    font-weight: 600;
+                }
+
+                li {
+                    &:not(.vri__site-nav--top) a {
+                        color: $darker-gray;
+
+                        &:hover, &.active {
+                            color: $purple;
+                        }
+                    }
+                }
+            }
+
+            .navbar {
+                display: none;
+
+                &-collapse {
+                    display: block;
+                }
+            }
+        }
+
+        @media screen and (min-width: $breakpoint-xl) {
+            flex-basis: 350px;
+        }
+    }
+}

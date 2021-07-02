@@ -1,0 +1,210 @@
+@import "../../../lib/styles/variables";
+@import "../../../lib/styles/common";
+
+.vriHeader {
+    background: $primary;
+    height: 110px;
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.vriNav {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 28px 20px 30px 35px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.vriNavLeft {
+    width: 128px;
+
+    img {
+        width: 100%;
+    }
+
+    h3 {
+        margin-top: 4px;
+        font-family: $calibre-medium;
+        font-size: 14.1px;
+        font-weight: normal;
+        letter-spacing: 3.15px;
+        border-top: 1px solid $white;
+        padding-top: 9px;
+        text-transform: uppercase;
+        color: $white;
+    }
+}
+
+.vriNavRight {
+    justify-content: flex-end;
+}
+
+.navbarMenu {
+    position: relative;
+    margin: 5px auto 0;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+}
+
+.navbarToggler {
+    border: none;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+}
+
+.navbarBar {
+    height: 3px;
+    width: 18px;
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    transition: 0.4s;
+
+    &__top {
+        top: 0;
+    }
+
+    &__bottom {
+        top: 9px;
+    }
+}
+
+.navbarBarCollapsed {
+    top: 6px;
+    transform: rotate(45deg);
+    transition: top 0.3s ease 0.1s, transform 0.3s ease-out 0.5s;
+}
+
+.navbarBarCollapsedAlt {
+    top: 6px;
+    transform: rotate(-45deg);
+    transition: top 0.3s ease 0.1s, transform 0.3s ease-out 0.5s;
+}
+
+.vriDropdown {
+    background: #1e213d;
+    overflow-y: scroll;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 112px;
+    z-index: 1;
+    height: 0;
+    width: 100%;
+    transition: height 0.3s ease-in;
+    overflow: none;
+
+    &__isVisible {
+        height: 500px;
+    }
+
+    ul {
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        text-align: center;
+        display: list-item;
+    }
+
+    a {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1;
+        padding: 1rem;
+        display: block;
+    }
+}
+
+.vriMainNavbar {
+    display: none;
+    font-family: $calibre;
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+    .vriHeader {
+        height: 160px;
+    }
+
+    .vriNav {
+        padding: 45px 40px 50px 50px;
+    }
+
+    .vriNavLeft {
+        width: 170px;
+
+        h3 {
+            margin-top: 4px;
+            font-size: 18.8px;
+            letter-spacing: 4.2px;
+            padding-top: 12px;
+        }
+    }
+
+    .vriDropdown {
+        top: 162px;
+    }
+}
+
+@media only screen and (min-width: $breakpoint-lg) {
+    .vriNav {
+        align-items: center;
+    }
+
+    .navbarToggler {
+        display: none;
+    }
+
+    .vriNavLeft {
+        width: 226px;
+
+        h3 {
+            margin-top: 8px;
+            font-size: 25px;
+            letter-spacing: 5.6px;
+            padding-top: 15px;
+            padding-left: 4px;
+            white-space: nowrap;
+        }
+    }
+
+    .vriMainNavbar {
+        display: block;
+        margin-right: 30px;
+
+        ul {
+            right: 18px;
+            top: 0;
+            max-width: 380px;
+            transition: 0.3s;
+            flex-direction: row;
+            display: flex;
+        }
+
+        a {
+            padding-right: 1rem;
+            padding-left: 1rem;
+            font-size: 24px;
+            font-weight: 500;
+            font-family: $calibre-medium;
+        }
+    }
+
+    .vriNavRight {
+        align-items: center;
+    }
+
+    .vriDropdown {
+        display: none !important;
+    }
+}

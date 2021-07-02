@@ -1,0 +1,114 @@
+@import "./variables";
+@import "./resets";
+@import "./common";
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $darker-purple;
+    line-height: 1;
+    margin: 0;
+}
+
+h1, h2, h3, h6 {
+    font-family: $calibre-semibold;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3.750em;
+}
+
+h2 {
+    font-size: 2.500em;
+}
+
+h3 {
+    font-size: 1.875em;
+}
+
+h6 {
+    font-size: 1.500em;
+}
+
+body, p {
+    color: $darker-purple;
+    font-family: $calibre;
+}
+
+button, input {
+    &:focus,&:hover {
+        outline: none;
+    }
+}
+
+input:focus::placeholder {
+    color: transparent !important;
+}
+
+.vri {
+    &__button {
+        background-color: $purple;
+        border: none;
+        color: $white;
+        font-family: $calibre-semibold;
+        font-weight: 600;
+        font-size: 1.250em;
+        line-height: 1;
+        padding: 18px 23px 12px;
+        text-decoration: none;
+        transition: .2s ease-in-out;
+
+        p {
+            color: $white;
+            line-height: calc(26/20);
+            margin: 0;
+        }
+
+        &--completed {
+            background-color: $teal;
+        }
+
+        &:hover, &:focus {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &--learn, &--learn:hover, &--learn:focus {
+            background-color: transparent;
+            color: $darker-purple;
+            font-size: 1.500em;
+        }
+
+        &--learn {
+            img {
+                margin-left: .5em;
+                transition: .1s ease-in-out;
+            }
+
+            &:hover {
+                transform: none;
+
+                img {
+                    transform: translateX(3px);
+                }
+            }
+        }
+
+        &--outline {
+            background: none;
+            border: 2px solid $darker-purple;
+            color: $darker-purple;
+        }
+
+        &[type="submit"] {
+            color: $white;
+        }
+    }
+}
