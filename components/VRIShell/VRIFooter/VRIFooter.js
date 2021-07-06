@@ -31,6 +31,11 @@ export default function VRIFooter() {
                     <li>
                         <Link href="/grants">Grants</Link>
                     </li>
+                    <li>
+                        <Link href="/data-access">
+                            Viome Publication Dataset Access Program
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <p className={styles.vriCopyright}>

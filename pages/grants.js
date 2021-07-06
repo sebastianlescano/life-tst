@@ -1,12 +1,83 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
 import classNames from 'classnames';
 import VRIShell from '../components/VRIShell/VRIShell';
 import styles from '../styles/Grants.module.scss';
 
 export default function Grants() {
-    const { register, handleSubmit } = useForm(),
-        onSubmit = (data) => console.log(data);
+    useEffect(() => {
+        const vriForm = document.querySelector('#vri-grants-form'),
+            vriBtn = document.querySelector('.vri__button'),
+            /*
+            studyGroup = document.querySelectorAll(
+                'input[name="entry.717625224"]',
+            ),
+            endpoints = document.querySelector('#endpoints'),
+            */
+            thankyou = document.querySelector('.vri__forms--thankyou'),
+            /*
+            ~ @params
+            ~ form (element) - form we are submitting
+            ~ @description
+            ~ Serializes the given form element and submits it to Google forms.
+            */
+            sendData = (form) => {
+                const formData = new FormData(form),
+                    jQuery = window.jQuery || {};
+
+                thankyou.classList.add(styles.active);
+                // vriBtn.setAttribute('disabled', true);
+
+                const formValues = {};
+                formData.forEach((value, key) => {
+                    // Reflect.has in favor of: object.hasOwnProperty(key)
+                    if (!Reflect.has(formValues, key)) {
+                        formValues[key] = value;
+                        return;
+                    }
+                    if (!Array.isArray(formValues[key])) {
+                        formValues[key] = [formValues[key]];
+                    }
+                    formValues[key].push(value);
+                });
+
+                jQuery.ajax({
+                    type: 'POST',
+                    url: 'https://docs.google.com/forms/d/e/1FAIpQLSfB6yFg-JyBZfkdnphJErCmEhtKqtaRFSbjwLj3XlGVF3RfGQ/formResponse',
+                    data: formValues,
+                    contentType: 'application/json',
+                    dataType: 'jsonp',
+                    complete() {
+                        window.scrollTo({
+                            top: thankyou.offsetTop - window.innerHeight / 2,
+                            behavior: 'smooth',
+                        });
+                    },
+                });
+            };
+
+        // Check if we are in a submitted state or not
+        vriBtn.addEventListener('click', () => {
+            vriForm.classList.add(styles['vri__forms--submitted']);
+        });
+
+        // Overwrite default Form Action
+        vriForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            sendData(vriForm);
+        });
+
+        return () => {
+            vriBtn.removeEventListener('click', () => {
+                vriForm.classList.add(styles['vri__forms--submitted']);
+            });
+
+            vriForm.removeEventListener('submit', (e) => {
+                e.preventDefault();
+                sendData(vriForm);
+            });
+        };
+    }, []);
 
     return (
         <VRIShell>
@@ -279,8 +350,6 @@ export default function Grants() {
                             <form
                                 className={styles.vri__forms}
                                 id="vri-grants-form"
-                                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB6yFg-JyBZfkdnphJErCmEhtKqtaRFSbjwLj3XlGVF3RfGQ/formResponse"
-                                onSubmit={handleSubmit(onSubmit)}
                             >
                                 <div className={styles['vri__forms--pair']}>
                                     <div
