@@ -11,6 +11,24 @@
     img {
         padding: 1.25rem;
     }
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+        padding: 7.188em 5em;
+    }
+
+    @media only screen and (min-width: $breakpoint-desktop) {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-left: 1.875em;
+        padding-right: 1.875em;
+    }
+
+    @media only screen and (min-width: $breakpoint-xl) {
+        margin: auto;
+        max-width: 1440px;
+        padding-left: 10.313em;
+        padding-right: 10.313em
+    }
 }
 
 .vriFooterNav {
@@ -53,10 +71,6 @@
 }
 
 @media only screen and (min-width: $breakpoint-desktop) {
-    .vriFooter {
-        flex-direction: column-reverse;
-    }
-
     .vriFooterWrapper {
         align-items: flex-start;
         display: flex;

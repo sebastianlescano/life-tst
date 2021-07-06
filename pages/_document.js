@@ -34,14 +34,14 @@ export default class MyDocument extends Document {
                     />
                     <link
                         rel="preload"
-                        href="/fonts/Calibrefonts/CalibreSemibold.woff2"
+                        href="/fonts/Calibrefonts/CalibreMedium.woff2"
                         as="font"
                         type="font/woff2"
                         crossOrigin=""
                     />
                     <link
                         rel="preload"
-                        href="/fonts/Tiemfonts/TiemposHeadlineRegular.woff2"
+                        href="/fonts/Calibrefonts/CalibreSemibold.woff2"
                         as="font"
                         type="font/woff2"
                         crossOrigin=""

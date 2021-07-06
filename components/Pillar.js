@@ -21,7 +21,8 @@ export default function Card({ data, styles }) {
                     />
                 </g>
             </svg>
-        );
+        ),
+        BackText = data.back;
 
     return (
         <a
@@ -37,7 +38,7 @@ export default function Card({ data, styles }) {
                 <PlusSVG />
             </div>
             <div className={styles.back}>
-                <p>{data.back}</p>
+                <BackText />
                 <svg
                     height="60"
                     viewBox="0 0 60 60"

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import classNames from 'classnames';
 import VRIShell from '../components/VRIShell/VRIShell';
 import Pillar from '../components/Pillar';
@@ -22,7 +23,7 @@ export default function Home() {
         }, 2000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [activeWord]);
 
     return (
         <VRIShell>
@@ -87,7 +88,22 @@ export default function Home() {
                             data={{
                                 header: 'Prevention',
                                 text: 'Using food as medicine to intercept chronic diseases, cancers, & aging.',
-                                back: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                back: () => (
+                                    <p>
+                                        Our testing services, with over 250, 000
+                                        users, provides health insights based on
+                                        biological samples + medical
+                                        history(drugs, symptoms, diseases).
+                                        <br />
+                                        <br />
+                                        Viome’s recommendations are designed to
+                                        modulate the microbial functions via
+                                        nutrition and indirectly influences
+                                        human physiology in order to slow aging,
+                                        improve health, and reduce chronic
+                                        inflammation.
+                                    </p>
+                                ),
                             }}
                             styles={styles}
                         />
@@ -95,7 +111,17 @@ export default function Home() {
                             data={{
                                 header: 'Prediction',
                                 text: 'Developing biomarkers that are indicative of chronic diseases, cancers, & aging.',
-                                back: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                back: () => (
+                                    <p>
+                                        Based on longitudinal data from our
+                                        testing services, we are able to develop
+                                        biomarkers for most chronic diseases,
+                                        cancers, and aging. With every test we
+                                        are able to see an individual’s
+                                        progression towards or away from a
+                                        disease biomarker.
+                                    </p>
+                                ),
                             }}
                             styles={styles}
                         />
@@ -103,7 +129,14 @@ export default function Home() {
                             data={{
                                 header: 'Diagnostics',
                                 text: 'Using food as medicine to intercept chronic diseases, cancers, & aging.',
-                                back: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                back: () => (
+                                    <p>
+                                        Our predictive biomarkers give us the
+                                        hypothesis to do clinical research in
+                                        order to identify the signature of
+                                        chronic diseases, cancers, and aging.
+                                    </p>
+                                ),
                             }}
                             styles={styles}
                         />
@@ -111,7 +144,19 @@ export default function Home() {
                             data={{
                                 header: 'Therapeutics',
                                 text: 'Developing precision medicine for chronic disease, cancers, & aging.',
-                                back: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                back: () => (
+                                    <p>
+                                        The signatures found through diagnostics
+                                        allow us to determine the mechanism of
+                                        action to develop precision therapeutics
+                                        in the form of drugs and vaccines.
+                                        <br />
+                                        <br />
+                                        Viome can determine drug effectiveness,
+                                        including immunotherapy, which is
+                                        dependent upon the gut microbiome.
+                                    </p>
+                                ),
                             }}
                             styles={styles}
                         />
@@ -120,129 +165,126 @@ export default function Home() {
             </section>
             <section className={styles['vri--home-top']}>
                 <div className={styles['vri--home__menu']}>
-                    <a
-                        className={styles['vri--home__menu-item']}
-                        href="https://www.viome.com/research-institute/tests"
-                    >
-                        <picture>
-                            <source
-                                media="(min-width: 1440px)"
-                                srcSet="/images/VRI/home/home-kits-xl.jpg 1x,
+                    <Link href="/tests">
+                        <a className={styles['vri--home__menu-item']}>
+                            <picture>
+                                <source
+                                    media="(min-width: 1440px)"
+                                    srcSet="/images/VRI/home/home-kits-xl.jpg 1x,
                           /images/VRI/home/home-kits-xl@2x.jpg 2x,
                           /images/VRI/home/home-kits-xl@3x.jpg 3x"
-                                type="image/jpeg"
-                            />
-                            <source
-                                media="(max-width: 1439px)"
-                                srcSet="/images/VRI/home/home-kits.jpg 1x,
+                                    type="image/jpeg"
+                                />
+                                <source
+                                    media="(max-width: 1439px)"
+                                    srcSet="/images/VRI/home/home-kits.jpg 1x,
                           /images/VRI/home/home-kits@2x.jpg 2x,
                           /images/VRI/home/home-kits@3x.jpg 3x"
-                                type="image/jpeg"
-                            />
-                            <img
-                                src="/images/VRI/home/home-kits.jpg"
-                                loading="lazy"
-                                alt="VRI Kits"
-                                type="image/jpeg"
-                            />
-                        </picture>
-                        <div
-                            className={classNames(
-                                'vri__button',
-                                styles.vri__button,
-                                styles['vri__button--learn'],
-                                'vri__button--learn',
-                            )}
-                        >
-                            Our Tests{' '}
-                            <img
-                                src="/images/VRI/forward-pointer-arrow-dark.svg"
-                                alt="arrow"
-                            />
-                        </div>
-                    </a>
-                    <a
-                        className={styles['vri--home__menu-item']}
-                        href="https://www.viome.com/research-institute/studies"
-                    >
-                        <picture>
-                            <source
-                                media="(min-width: 1440px)"
-                                srcSet="/images/VRI/home/home-studies-xl.jpg 1x,
+                                    type="image/jpeg"
+                                />
+                                <img
+                                    src="/images/VRI/home/home-kits.jpg"
+                                    loading="lazy"
+                                    alt="VRI Kits"
+                                    type="image/jpeg"
+                                />
+                            </picture>
+                            <div
+                                className={classNames(
+                                    'vri__button',
+                                    styles.vri__button,
+                                    styles['vri__button--learn'],
+                                    'vri__button--learn',
+                                )}
+                            >
+                                Our Tests{' '}
+                                <img
+                                    src="/images/VRI/forward-pointer-arrow-dark.svg"
+                                    alt="arrow"
+                                />
+                            </div>
+                        </a>
+                    </Link>
+                    <Link href="/studies">
+                        <a className={styles['vri--home__menu-item']}>
+                            <picture>
+                                <source
+                                    media="(min-width: 1440px)"
+                                    srcSet="/images/VRI/home/home-studies-xl.jpg 1x,
                           /images/VRI/home/home-studies-xl@2x.jpg 2x,
                           /images/VRI/home/home-studies-xl@3x.jpg 3x"
-                                type="image/jpeg"
-                            />
-                            <source
-                                media="(max-width: 1439px)"
-                                srcSet="/images/VRI/home/home-studies.jpg 1x,
+                                    type="image/jpeg"
+                                />
+                                <source
+                                    media="(max-width: 1439px)"
+                                    srcSet="/images/VRI/home/home-studies.jpg 1x,
                           /images/VRI/home/home-studies@2x.jpg 2x,
                           /images/VRI/home/home-studies@3x.jpg 3x"
-                                type="image/jpeg"
-                            />
-                            <img
-                                src="/images/VRI/home/home-studies.jpg"
-                                loading="lazy"
-                                alt="VRI Studies"
-                                type="image/jpeg"
-                            />
-                        </picture>
-                        <div
-                            className={classNames(
-                                'vri__button',
-                                styles.vri__button,
-                                styles['vri__button--learn'],
-                                'vri__button--learn',
-                            )}
-                        >
-                            Our Studies{' '}
-                            <img
-                                src="/images/VRI/forward-pointer-arrow-dark.svg"
-                                alt="arrow"
-                            />
-                        </div>
-                    </a>
-                    <a
-                        className={styles['vri--home__menu-item']}
-                        href="https://www.viome.com/research-institute/grants"
-                    >
-                        <picture>
-                            <source
-                                media="(min-width: 1440px)"
-                                srcSet="/images/VRI/home/home-grants-xl.jpg 1x,
+                                    type="image/jpeg"
+                                />
+                                <img
+                                    src="/images/VRI/home/home-studies.jpg"
+                                    loading="lazy"
+                                    alt="VRI Studies"
+                                    type="image/jpeg"
+                                />
+                            </picture>
+                            <div
+                                className={classNames(
+                                    'vri__button',
+                                    styles.vri__button,
+                                    styles['vri__button--learn'],
+                                    'vri__button--learn',
+                                )}
+                            >
+                                Our Studies{' '}
+                                <img
+                                    src="/images/VRI/forward-pointer-arrow-dark.svg"
+                                    alt="arrow"
+                                />
+                            </div>
+                        </a>
+                    </Link>
+                    <Link href="/grants">
+                        <a className={styles['vri--home__menu-item']}>
+                            <picture>
+                                <source
+                                    media="(min-width: 1440px)"
+                                    srcSet="/images/VRI/home/home-grants-xl.jpg 1x,
                           /images/VRI/home/home-grants-xl@2x.jpg 2x,
                           /images/VRI/home/home-grants-xl@3x.jpg 3x"
-                                type="image/jpeg"
-                            />
-                            <source
-                                media="(max-width: 1439px)"
-                                srcSet="/images/VRI/home/home-grants.jpg 1x,
+                                    type="image/jpeg"
+                                />
+                                <source
+                                    media="(max-width: 1439px)"
+                                    srcSet="/images/VRI/home/home-grants.jpg 1x,
                           /images/VRI/home/home-grants@2x.jpg 2x,
                           /images/VRI/home/home-grants@3x.jpg 3x"
-                                type="image/jpeg"
-                            />
-                            <img
-                                src="/images/VRI/home/home-grants.jpg"
-                                loading="lazy"
-                                alt="VRI Grants"
-                                type="image/jpeg"
-                            />
-                        </picture>
-                        <div
-                            className={classNames(
-                                'vri__button',
-                                styles.vri__button,
-                                styles['vri__button--learn'],
-                                'vri__button--learn',
-                            )}
-                        >
-                            Our Grants{' '}
-                            <img
-                                src="/images/VRI/forward-pointer-arrow-dark.svg"
-                                alt="arrow"
-                            />
-                        </div>
-                    </a>
+                                    type="image/jpeg"
+                                />
+                                <img
+                                    src="/images/VRI/home/home-grants.jpg"
+                                    loading="lazy"
+                                    alt="VRI Grants"
+                                    type="image/jpeg"
+                                />
+                            </picture>
+                            <div
+                                className={classNames(
+                                    'vri__button',
+                                    styles.vri__button,
+                                    styles['vri__button--learn'],
+                                    'vri__button--learn',
+                                )}
+                            >
+                                Our Grants{' '}
+                                <img
+                                    src="/images/VRI/forward-pointer-arrow-dark.svg"
+                                    alt="arrow"
+                                />
+                            </div>
+                        </a>
+                    </Link>
                 </div>
                 <h3>
                     <strong>OUR MISSION</strong>
@@ -384,17 +426,18 @@ export default function Home() {
                                     without the need for a healthcare
                                     provider.&nbsp;
                                 </p>
-                                <a
-                                    className={classNames(
-                                        'vri__button',
-                                        'vri__button--outline',
-                                        styles.vri__button,
-                                        styles['vri__button--outline'],
-                                    )}
-                                    href="https://www.viome.com/research-institute/tests"
-                                >
-                                    Our Tests
-                                </a>
+                                <Link href="/tests">
+                                    <a
+                                        className={classNames(
+                                            'vri__button',
+                                            'vri__button--outline',
+                                            styles.vri__button,
+                                            styles['vri__button--outline'],
+                                        )}
+                                    >
+                                        Our Tests
+                                    </a>
+                                </Link>
                             </div>
                         </div>
                         <div
@@ -467,17 +510,18 @@ export default function Home() {
                                         generic recommendations for everyone.
                                     </li>
                                 </ul>
-                                <a
-                                    className={classNames(
-                                        'vri__button',
-                                        'vri__button--outline',
-                                        styles.vri__button,
-                                        styles['vri__button--outline'],
-                                    )}
-                                    href="https://www.viome.com/research-institute/studies"
-                                >
-                                    Our Studies
-                                </a>
+                                <Link href="/studies">
+                                    <a
+                                        className={classNames(
+                                            'vri__button',
+                                            'vri__button--outline',
+                                            styles.vri__button,
+                                            styles['vri__button--outline'],
+                                        )}
+                                    >
+                                        Our Studies
+                                    </a>
+                                </Link>
                             </div>
                         </div>
                         <div
@@ -558,17 +602,18 @@ export default function Home() {
                                     findings to the market for the benefit of
                                     the people.
                                 </p>
-                                <a
-                                    className={classNames(
-                                        'vri__button',
-                                        'vri__button--outline',
-                                        styles.vri__button,
-                                        styles['vri__button--outline'],
-                                    )}
-                                    href="https://www.viome.com/research-institute/grants"
-                                >
-                                    Our Grants
-                                </a>
+                                <Link href="/grants">
+                                    <a
+                                        className={classNames(
+                                            'vri__button',
+                                            'vri__button--outline',
+                                            styles.vri__button,
+                                            styles['vri__button--outline'],
+                                        )}
+                                    >
+                                        Our Grants
+                                    </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

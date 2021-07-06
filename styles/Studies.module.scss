@@ -1,0 +1,163 @@
+@import "./shell";
+
+.vri {
+    &__hero {
+        background-image: url(/images/VRI/studies/studies-bg-sml.jpg);
+
+        @media screen and (min-width: $breakpoint-mobile) {
+            background-image: url(/images/VRI/studies/studies-bg-med.jpg);
+        }
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            background-image: url(/images/VRI/studies/studies-bg-lrg.jpg);
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            background-image: url(/images/VRI/studies/studies-bg-xl.jpg);
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (-o-min-device-pixel-ratio: 2/1),
+            only screen and (min-resolution: 192dpi),
+            only screen and (min-resolution: 2dppx) {
+            background-image: url(/images/VRI/studies/studies-bg-sml@2x.jpg);
+
+            @media screen and (min-width: $breakpoint-mobile) {
+                background-image: url(/images/VRI/studies/studies-bg-med@2x.jpg);
+            }
+
+            @media screen and (min-width: $breakpoint-tablet) {
+                background-image: url(/images/VRI/studies/studies-bg-lrg@2x.jpg);
+            }
+
+            @media screen and (min-width: $breakpoint-desktop) {
+                background-image: url(/images/VRI/studies/studies-bg-xl@2x.jpg);
+            }
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 3),
+            only screen and (-o-min-device-pixel-ratio: 3/1),
+            only screen and (min-resolution: 384dpi),
+            only screen and (min-resolution: 3dppx) {
+            background-image: url(/images/VRI/studies/studies-bg-sml@3x.jpg);
+
+            @media screen and (min-width: $breakpoint-mobile) {
+                background-image: url(/images/VRI/studies/studies-bg-med@3x.jpg);
+            }
+
+            @media screen and (min-width: $breakpoint-tablet) {
+                background-image: url(/images/VRI/studies/studies-bg-lrg@3x.jpg);
+            }
+
+            @media screen and (min-width: $breakpoint-desktop) {
+                background-image: url(/images/VRI/studies/studies-bg-xl@3x.jpg);
+            }
+        }
+    }
+
+    &__columns--right {
+        padding-bottom: 20em;
+    }
+
+    &__body {
+        text-align: center;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            padding: 0 2.500em;
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            padding: 0;
+            text-align: left;
+        }
+
+        h2 {
+            color: $purple;
+
+            &.vri--studies__header {
+                margin-top: 2.5em;
+
+                &--completed {
+                    color: $teal;
+                    margin-top: 4.250em;
+                }
+            }
+        }
+
+        h3 {
+            margin-bottom: 1em;
+        }
+
+        h3, li {
+            font-family: $calibre;
+            line-height: calc(38 / 30);
+            font-weight: normal;
+        }
+
+        li {
+            font-size: 1.875em;
+            margin-bottom: .75em;
+        }
+
+        ul {
+            margin-bottom: 2em;
+            list-style-type: disc;
+            padding-inline-start: 40px;
+        }
+    }
+
+    &__studies-module {
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+        margin: 2.500em 0 1.250em;
+        padding: 3.125em 1.563em 1.875em;
+
+        .vri__button {
+            display: inline-block;
+            margin-bottom: 1.250em;
+            padding: 10px 20px 4px;
+
+            p {
+                font-family: $calibre-semibold;
+            }
+        }
+
+        h6 {
+            line-height: calc(26 / 24);
+            margin-bottom: 1.083em;
+        }
+
+        > p {
+            font-size: 1.250em;
+            line-height: calc(26 / 20);
+            margin-bottom: 2.200em;
+        }
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            padding-left: 1.875em;
+            padding-right: 1.875em;
+
+            &__wrapper {
+                align-items: flex-start;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
+            .vri__button {
+                margin: 0 0 0 30px;
+            }
+
+            h6 {
+                flex: 1 60%;
+            }
+
+            .vri__button--learn {
+                margin: 0;
+                padding-left: 0;
+            }
+        }
+    }
+}

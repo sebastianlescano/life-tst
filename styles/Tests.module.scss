@@ -1,0 +1,95 @@
+@import "./shell";
+
+.vri {
+    &__hero {
+        background-image: url('/images/VRI/laboratory-bg.jpg');
+    }
+
+    &--tests {
+        &__body {
+            text-align: center;
+
+            @media screen and (min-width: $breakpoint-desktop) {
+                text-align: left;
+            }
+
+            section {
+                margin-bottom: 3.500em;
+            }
+
+            h2 {
+                color: $purple;
+                margin-bottom: 1em;
+
+                &:not(:first-of-type) {
+                    margin-top: 4em;
+                }
+            }
+
+            h3 {
+                margin-bottom: 1em;
+            }
+
+            p {
+                font-size: 1.250em;
+                line-height: calc(26 / 20);
+                margin-bottom: 1.5em;
+
+                br {
+                    content: '';
+                    display: block;
+                    margin-bottom: 1.250em;
+                }
+            }
+
+            ul {
+                margin-bottom: 1.5em;
+                list-style-type: disc;
+                padding-inline-start: 40px;
+
+                ul {
+                    list-style-type: circle;
+                }
+            }
+
+            em {
+                font-family: $calibre-semibold;
+                font-style: normal;
+            }
+
+            li {
+                text-align: left;
+                font-size: 1.250em;
+                line-height: calc(26 / 20);
+
+                br {
+                    content: '';
+                    display: block;
+                    margin-bottom: 1.250em;
+                }
+            }
+            #{$a-tags} {
+                color: $darker-purple;
+                text-decoration: underline;
+                text-decoration-color: $darker-purple;
+            }
+            #{$a-tags-hover} {
+                color: $darker-purple;
+            }
+        }
+
+        &__lead {
+            p {
+                font-size: 1.8750em;
+                line-height: calc(26 / 20);
+                margin-bottom: 5.8em;
+
+                br {
+                    content: '';
+                    display: block;
+                    margin-bottom: 1.250em;
+                }
+            }
+        }
+    }
+}

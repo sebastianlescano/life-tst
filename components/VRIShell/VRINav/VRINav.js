@@ -9,7 +9,7 @@ export default function VRINav() {
         Links = () => (
             <ul>
                 <li>
-                    <Link href="/home">Home</Link>
+                    <Link href="/">Home</Link>
                 </li>
                 <li>
                     <Link href="/tests">Tests</Link>
@@ -29,19 +29,19 @@ export default function VRINav() {
     return (
         <header className={styles.vriHeader}>
             <nav className={styles.vriNav}>
-                <div className={styles.vriNavLeft}>
-                    <div>
-                        <a>
+                <Link href="/">
+                    <div className={styles.vriNavLeft}>
+                        <div>
                             <img
                                 src="https://images.ctfassets.net/qk4l4jfatr3e/4HctpEJK7WfjxbViWXZgnR/cc954a2ecb67d4f56fd50dd37b7ea36f/viome-white.svg"
                                 alt="Logo - Viome - White"
                             />
-                        </a>
+                        </div>
+                        <div>
+                            <h3>Life Sciences</h3>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Life Sciences</h3>
-                    </div>
-                </div>
+                </Link>
                 <div className={styles.vriNavRight}>
                     <button
                         className={styles.navbarToggler}

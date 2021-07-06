@@ -1,0 +1,142 @@
+@import "./shell";
+
+.vri {
+    &__hero {
+        background-image: url(/images/VRI/grants/grants-bg-sml.jpg);
+
+        @media screen and (min-width: $breakpoint-mobile) {
+            background-image: url(/images/VRI/grants/grants-bg-med.jpg);
+        }
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            background-image: url(/images/VRI/grants/grants-bg-lrg.jpg);
+        }
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            background-image: url(/images/VRI/grants/grants-bg-xl.jpg);
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (min-resolution: 192dpi),
+            only screen and (min-resolution: 2dppx) {
+            background-image: url(/images/VRI/grants/grants-bg-sml@2x.jpg);
+
+            @media screen and (min-width: $breakpoint-mobile) {
+                background-image: url(/images/VRI/grants/grants-bg-med@2x.jpg);
+            }
+
+            @media screen and (min-width: $breakpoint-tablet) {
+                background-image: url(/images/VRI/grants/grants-bg-lrg@2x.jpg);
+            }
+
+            @media screen and (min-width: $breakpoint-desktop) {
+                background-image: url(/images/VRI/grants/grants-bg-xl@2x.jpg);
+            }
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 3),
+            only screen and (min-resolution: 384dpi),
+            only screen and (min-resolution: 3dppx) {
+            background-image: url(/images/VRI/grants/grants-bg-sml@3x.jpg);
+
+            @media screen and (min-width: $breakpoint-mobile) {
+                background-image: url(/images/VRI/grants/grants-bg-med@3x.jpg);
+            }
+
+            @media screen and (min-width: $breakpoint-tablet) {
+                background-image: url(/images/VRI/grants/grants-bg-lrg@3x.jpg);
+            }
+
+            @media screen and (min-width: $breakpoint-desktop) {
+                background-image: url(/images/VRI/grants/grants-bg-xl@3x.jpg);
+            }
+        }
+    }
+
+    &__body {
+        text-align: center;
+
+        @media screen and (min-width: $breakpoint-desktop) {
+            text-align: left;
+        }
+
+        h2 {
+            color: $purple;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        h6 {
+            margin-bottom: 1.667em;
+        }
+
+        p {
+            font-size: 1.250em;
+            line-height: calc(26 / 20);
+            margin-bottom: 1.250em;
+
+            br {
+                content: '';
+                display: block;
+                margin-bottom: 1.250em;
+            }
+        }
+
+        label p {
+            font-size: inherit;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            list-style-type: disc;
+            padding-inline-start: 40px;
+        }
+    }
+
+    &__container {
+        &:not(:first-of-type) {
+            margin-top: 8rem;
+            margin-bottom: 7rem;
+        }
+    }
+
+    &__forms {
+        @media screen and (min-width: $breakpoint-desktop) {
+            padding-right: 4.063em;
+        }
+
+        @media screen and (min-width: $breakpoint-xl) {
+            padding-right: 11.875em;
+        }
+
+        label {
+            margin-top: 2.500em;
+        }
+
+        label p {
+            display: inline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    }
+
+    &__lead {
+        p {
+            font-size: 1.8750em;
+            line-height: calc(26 / 20);
+
+            br {
+                content: '';
+                display: block;
+                margin-bottom: 1.250em;
+            }
+        }
+    }
+}

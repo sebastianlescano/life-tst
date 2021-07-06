@@ -1,5 +1,5 @@
 import VRINav from './VRINav/VRINav';
-// import VRIFooter from './VRIFooter/VRIFooter';
+import VRIFooter from './VRIFooter/VRIFooter';
 import styles from './VRIShell.module.scss';
 
 export default function VRILayout({ children }) {
@@ -8,7 +8,7 @@ export default function VRILayout({ children }) {
             <main className={(styles.vriShell, 'vri')}>
                 <VRINav />
                 <div>{children}</div>
-                {/* <VRIFooter /> */}
+                <VRIFooter />
             </main>
         </>
     );
