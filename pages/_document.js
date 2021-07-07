@@ -18,7 +18,10 @@ export default class MyDocument extends Document {
                         httpEquiv="X-UA-Compatible"
                         content="IE=edge,chrome=1"
                     />
-                    <meta property="og:site_name" content="Viome.com" />
+                    <meta
+                        property="og:site_name"
+                        content="Viome Life Sciences"
+                    />
                     <meta property="og:locale" content="en_US" />
                     <meta property="og:type" content="website" />
                     <meta property="fb:app_id" content="MyViome" />

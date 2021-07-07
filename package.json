@@ -6,16 +6,15 @@
         "dev": "next",
         "build": "next build",
         "start": "next start",
-        "lint": "eslint pages components --ext=js --ext=jsx && stylelint \"**/*.scss\""
+        "lint": "eslint pages components --ext=js --ext=jsx && stylelint \"**/*.scss\"",
+        "postbuild": "next-sitemap"
     },
     "dependencies": {
         "classnames": "^2.3.1",
         "next": "11.0.1",
         "normalize.css": "^8.0.1",
         "react": "17.0.2",
-        "react-dom": "17.0.2",
-        "react-hook-form": "^7.10.1",
-        "react-responsive-picture": "^3.2.2"
+        "react-dom": "17.0.2"
     },
     "devDependencies": {
         "babel-eslint": "^10.1.0",
@@ -29,6 +28,7 @@
         "eslint-plugin-react": "^7.23.2",
         "eslint-plugin-react-hooks": "^4.2.0",
         "next-secure-headers": "^2.2.0",
+        "next-sitemap": "^1.6.133",
         "prettier": "^2.3.0",
         "sass": "^1.32.13",
         "stylelint": "^13.13.1",

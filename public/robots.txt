@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Sitemap: https://www.viome.com/sitemap.xml
+Allow: /
+
+# Host
+Host: https://wwwv.viomelifesciences.com
+
+# Sitemaps
+Sitemap: https://wwwv.viomelifesciences.com/sitemap.xml
