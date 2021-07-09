@@ -86,7 +86,7 @@ export default function Grants() {
                 <title>Viome Life Sciences - Grants | Viome</title>
                 <meta
                     name="description"
-                    content="The mission of the VRI Grants Program is to translate research into commercial products with clinical utility: devising new therapies and developing more accurate diagnostics and companion diagnostics."
+                    content="The mission of the VLS Grants Program is to translate research into commercial products with clinical utility: devising new therapies and developing more accurate diagnostics and companion diagnostics."
                 />
                 <meta name="keywords" content="gut microbiome testing" />
                 <meta
@@ -99,7 +99,7 @@ export default function Grants() {
                 />
                 <meta
                     property="og:description"
-                    content="The mission of the VRI Grants Program is to translate research into commercial products with clinical utility: devising new therapies and developing more accurate diagnostics and companion diagnostics."
+                    content="The mission of the VLS Grants Program is to translate research into commercial products with clinical utility: devising new therapies and developing more accurate diagnostics and companion diagnostics."
                 />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary" />
@@ -182,7 +182,7 @@ export default function Grants() {
                                             href="#program-process"
                                             data-anchor="program-process"
                                         >
-                                            The process of obtaining a VRI grant
+                                            The process of obtaining a VLS grant
                                         </a>
                                     </li>
                                     <li>
@@ -208,7 +208,7 @@ export default function Grants() {
                             >
                                 <h2>Program Mission</h2>
                                 <p>
-                                    The mission of the VRI Grants Program is to
+                                    The mission of the VLS Grants Program is to
                                     translate research into commercial products
                                     with clinical utility: devising new
                                     therapies and developing more accurate
@@ -221,7 +221,7 @@ export default function Grants() {
                             >
                                 <h2>Program Description</h2>
                                 <p>
-                                    VRI systems biology platform has been built
+                                    VLS’ systems biology platform has been built
                                     by hundreds of biochemists,
                                     bioinformaticians, mathematicians, data
                                     scientists, and software engineers over the
@@ -236,24 +236,24 @@ export default function Grants() {
                                     diagnostic avenues.
                                 </p>
                                 <p>
-                                    VRI offers in-kind grants to clinicians and
+                                    We offers in-kind grants to clinicians and
                                     researchers at any institution, anywhere in
                                     the World. A typical grant would include
                                     free:
                                 </p>
                                 <ul>
                                     <li>
-                                        VRI sample collection kits (blood,
-                                        stool, saliva, urine, plasma, CSF,
-                                        throat swabs, vaginal swabs, surfaces,
-                                        etc.). Most samples can be collected at
-                                        home. All samples are shipped at room
+                                        Sample collection kits (blood, stool,
+                                        saliva, urine, plasma, CSF, throat
+                                        swabs, vaginal swabs, surfaces, etc.).
+                                        Most samples can be collected at home.
+                                        All samples are shipped at room
                                         temperature and are exempt human
                                         specimens, since all pathogens are
                                         inactivated.
                                     </li>
                                     <li>
-                                        VRI tests, which include laboratory and
+                                        Tests which include laboratory and
                                         bioinformatics analyses (strain level
                                         taxonomy and quantitative gene
                                         expression)
@@ -271,16 +271,16 @@ export default function Grants() {
                                     <li>
                                         Federally-accredited IRB with authority
                                         to approve clinical research in the USA,
-                                        but VRI can help with ethical review
+                                        but VLS can help with ethical review
                                         applications elsewhere
                                     </li>
                                 </ul>
                                 <br />
                                 <p>
-                                    An example of a successful grant: A VRI
+                                    An example of a successful grant: A VLS
                                     grantee collected saliva samples from oral
                                     cancer and cancer-free patients, and
-                                    provided accurate phenotyping. VRI analyzed
+                                    provided accurate phenotyping. VLS analyzed
                                     all the samples and developed a diagnostic
                                     test for oral cancer that has lead to a
                                     Genomic Medicine publication (see below) and
@@ -289,28 +289,28 @@ export default function Grants() {
                                     <br />
                                     The applicant and their institution may
                                     collect royalties from the commercialization
-                                    of the product. VRI Grants do not provide
+                                    of the product. VLS Grants do not provide
                                     direct financial support. However, they
-                                    include unlimited free VRI research support.
+                                    include unlimited free VLS research support.
                                     If you would like to conduct a large
                                     clinical study with relevance to human
                                     health, you will need to include
                                     high-quality tests that may cost
                                     approximately $1000 each, which may limit
-                                    the size of your study. With a VRI grant,
+                                    the size of your study. With a VLS grant,
                                     you can include hundreds of participants and
                                     obtain clinical-grade data from multiple
-                                    sites for free. For example, if VRI performs
+                                    sites for free. For example, if VLS performs
                                     the stool, blood, and saliva tests on 300
                                     participants at two time points, that makes
-                                    VRI’s grant value of $1,800,000 USD.
+                                    VLS’ grant value of $1,800,000 USD.
                                 </p>
                             </div>
                             <div
                                 className={styles.vri__container}
                                 id="program-process"
                             >
-                                <h2>The process of obtaining a VRI grant</h2>
+                                <h2>The process of obtaining a VLS grant</h2>
                                 <h3>Eligibility</h3>
                                 <ul>
                                     <li>
@@ -320,7 +320,7 @@ export default function Grants() {
                                     </li>
                                     <li>
                                         You must have regulatory approvals to
-                                        send human specimens to VRI laboratories
+                                        send human specimens to VLS laboratories
                                         in the USA.
                                     </li>
                                     <li>
@@ -352,21 +352,21 @@ export default function Grants() {
                                     </li>
                                     <li>
                                         Our scientific team will review it and
-                                        contact you if the proposal fits the
-                                        VRI&apos;s mission.
+                                        contact you if the proposal fits the VLS
+                                        mission.
                                     </li>
                                     <li>
                                         We will schedule a video teleconference
                                         for a more detailed discussion. more
                                         detailed discussion.
                                         <br />
-                                        VRI will work with you to finalize the
+                                        VLS will work with you to finalize the
                                         study protocol and any ethical reviews.
                                     </li>
 
                                     <li>
                                         We will create a partnership agreement
-                                        between VRI and PI&apos;s institution
+                                        between VLS and PI&apos;s institution
                                         (IP discussions, potential royalties).
                                         The grant is awarded and the project
                                         starts.
@@ -734,7 +734,7 @@ export default function Grants() {
                                     <br />
 
                                     <label htmlFor="utility">
-                                        The main purpose of VRI grants is to
+                                        The main purpose of VLS grants are to
                                         jointly develop IP that Viome will
                                         convert into a commercial product.
                                         Please describe how you envision
@@ -774,7 +774,7 @@ export default function Grants() {
                                             styles.vri__button,
                                         )}
                                         type="submit"
-                                        value="Apply for VRI Grant"
+                                        value="Apply for VLS Grant"
                                     />
                                 </form>
                             </div>

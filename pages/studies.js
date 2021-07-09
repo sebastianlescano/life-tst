@@ -108,16 +108,16 @@ export default function Studies() {
                     <div className={styles['vri__columns--right']}>
                         <div className={styles.vri__body}>
                             <h3>
-                                VRI has a comprehensive clinical research
-                                program that has already enrolled more than
-                                10,000 study participants in more than 20
+                                Viome Life Sciences has a comprehensive clinical
+                                research program that has already enrolled more
+                                than 10,000 study participants in more than 20
                                 chronic disease areas. Our clinical research
                                 programs generate accurate clinical and
                                 molecular data from people with different
                                 conditions and healthy participants. Using
                                 artificial intelligence and machine learning we
                                 gain a deeper insight into the root causes of
-                                chronic diseases. The goals of VRI clinical
+                                chronic diseases. The goals of VLS clinical
                                 research programs are to develop:
                             </h3>
                             <ul>

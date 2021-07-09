@@ -6,7 +6,7 @@ export default function VRIFooter() {
         <footer className={styles.vriFooter}>
             <div className={styles.vriFooterWrapper}>
                 <Link href="https://beta.viome.com">
-                    <a>
+                    <a target="_blank">
                         <img
                             src="https://images.ctfassets.net/qk4l4jfatr3e/1SMJ6OQPL8kTNsze9cXpzS/a0d3137c8503f29d9caabd319a566db8/viome-dark-logo.svg"
                             alt="Viome footer logo"

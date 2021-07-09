@@ -100,7 +100,7 @@ export default function Tests() {
                                             data-anchor="section-2"
                                             className=""
                                         >
-                                            Main features/advantages of VRI
+                                            Main features/advantages of VLS
                                             tests
                                         </a>
                                     </li>
@@ -175,13 +175,13 @@ export default function Tests() {
                             <section id="lead-1">
                                 <div className={styles['vri--tests__lead']}>
                                     <p>
-                                        VRI tests are used by Viome as part of
+                                        Our tests are used by Viome as part of
                                         the direct-to-consumer service, but are
                                         also excellent research tools, providing
                                         accurate and high-content data relevant
                                         to human health and chronic diseases.
-                                        All VRI tests use RNA sequencing, also
-                                        known as (meta)transcriptomic methods.
+                                        All tests use RNA sequencing, also known
+                                        as (meta)transcriptomic methods.
                                     </p>
                                 </div>
                             </section>
@@ -221,7 +221,7 @@ export default function Tests() {
                             <section id="section-2">
                                 <div>
                                     <h2>
-                                        Main features/advantages of VRI tests
+                                        Main features/advantages of VLS tests
                                     </h2>
 
                                     <ul>
@@ -250,7 +250,7 @@ export default function Tests() {
                                         <li>
                                             Laboratory methods are automated,
                                             minimizing or eliminating batch
-                                            effects. VRI tests are performed in
+                                            effects. Our tests are performed in
                                             a CLIA-licensed lab, and most of
                                             them are clinically validated. This
                                             means that:
@@ -391,7 +391,7 @@ export default function Tests() {
                                         </li>
                                     </ul>
                                     <p>
-                                        GI test data provided by VRI to the
+                                        GI test data provided by VLS to the
                                         grantee:
                                     </p>
                                     <ul>
@@ -474,7 +474,7 @@ export default function Tests() {
                                     </ul>
 
                                     <p>
-                                        HGE test data provided by VRI to the
+                                        HGE test data provided by VLS to the
                                         grantee:
                                     </p>
                                     <ul>
@@ -540,7 +540,7 @@ export default function Tests() {
                                         </li>
                                     </ul>
 
-                                    <p>Data provided by VRI to the grantee:</p>
+                                    <p>Data provided by VLS to the grantee:</p>
                                     <ul>
                                         <li>
                                             List of genera and their relative
@@ -616,7 +616,7 @@ export default function Tests() {
                                         </li>
                                     </ul>
 
-                                    <p>Data provided by VRI to the grantee:</p>
+                                    <p>Data provided by VLS to the grantee:</p>
                                     <ul>
                                         <li>
                                             List of genera and their relative
@@ -659,12 +659,12 @@ export default function Tests() {
                                         </li>
                                         <ul>
                                             <li>
-                                                Use the VRI’s skin prep kit for
+                                                Use the VLS’ skin prep kit for
                                                 the removal of skin contaminants
                                             </li>
                                             <li>
                                                 Properly generate and transfer
-                                                plasma/serum into VRI’s sample
+                                                plasma/serum into VLS’ sample
                                                 preservation kit
                                             </li>
                                             <li>
@@ -674,9 +674,9 @@ export default function Tests() {
                                             </li>
                                         </ul>
                                         <li>
-                                            VRI includes all instructions,
-                                            necessary components, and pre-paid
-                                            return mailer
+                                            Includes all instructions, necessary
+                                            components, and pre-paid return
+                                            mailer
                                         </li>
                                         <li>
                                             Isolates total RNA from plasma or
@@ -708,7 +708,7 @@ export default function Tests() {
                                         </li>
                                     </ul>
 
-                                    <p>Data provided by VRI to the grantee:</p>
+                                    <p>Data provided by VLS to the grantee:</p>
                                     <ul>
                                         <li>
                                             List of genera and their relative
@@ -741,7 +741,7 @@ export default function Tests() {
 
                                     <h3>
                                         A lab claims they sequence 16S rRNA. How
-                                        is that different from VRI’s RNA
+                                        is that different from VLS’ RNA
                                         sequencing?
                                     </h3>
                                     <p>

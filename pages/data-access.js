@@ -318,7 +318,7 @@ export default function DataAccess() {
                             </h4>
                             <p>
                                 After reviewing your request, a member of the
-                                VRI Team will use the information provided via
+                                VLS Team will use the information provided via
                                 the Publication Dataset Access Request Form to
                                 draft an SOW and DTA. Once ready for signature,
                                 the DTA and SOW documents will be emailed to the

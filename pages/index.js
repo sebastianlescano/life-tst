@@ -8,15 +8,7 @@ import styles from '../styles/Home.module.scss';
 
 export default function Home() {
     const [activeWord, setactiveWord] = useState(0),
-        words = [
-            'depression',
-            'IBS',
-            'cancer',
-            'aging',
-            'chronic disease',
-            'etc..',
-            'Illness.',
-        ];
+        words = ['chronic diseases.', 'cancers.', 'aging.', 'illness.'];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -83,7 +75,6 @@ export default function Home() {
                         <img
                             alt="VLS hero"
                             srcSet="/images/brooke-cagle-qj-1-j-4-h-od-nt-i-unsplash-copy-2.png"
-                            loading="lazy"
                         />
                     </picture>
                     <div className={styles.body}>
@@ -112,12 +103,11 @@ export default function Home() {
                     <div className={styles.wrapper}>
                         <h2>The Four Pillars of Viome Life Sciences</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo. Duis auteter irure dolor in reprehenderit
-                            in voluptate.
+                            Viome Life Sciences was founded in 2016 with a
+                            mission to make illness optional by predicting and
+                            preventing chronic diseases through a deeper
+                            understanding of an individual’s biology at a
+                            molecular level. We focus on four key initiatives:
                         </p>
                         <div className={styles.pillars}>
                             <Pillar
@@ -126,19 +116,21 @@ export default function Home() {
                                     text: 'Using food as medicine to intercept chronic diseases, cancers, & aging.',
                                     back: () => (
                                         <p>
-                                            Our testing services, with over 250,
-                                            000 users, provides health insights
-                                            based on biological samples +
-                                            medical history(drugs, symptoms,
-                                            diseases).
+                                            Our direct-to-consumer service
+                                            analyzes gene expressions (mRNA) in
+                                            order to provide individuals with
+                                            health insights and precision
+                                            nutrition to live a healthier life.
                                             <br />
                                             <br />
-                                            Viome’s recommendations are designed
-                                            to modulate the microbial functions
-                                            via nutrition and indirectly
-                                            influences human physiology in order
-                                            to slow aging, improve health, and
-                                            reduce chronic inflammation.
+                                            This platform of over 250,000 people
+                                            enables us to enhance our
+                                            understanding of human biology as a
+                                            system in order to develop
+                                            predictive biomarkers, precision
+                                            diagnostics, and precision
+                                            therapeutics to prevent and
+                                            intercept chronic diseases.
                                         </p>
                                     ),
                                 }}
@@ -150,13 +142,14 @@ export default function Home() {
                                     text: 'Developing biomarkers that are indicative of chronic diseases, cancers, & aging.',
                                     back: () => (
                                         <p>
-                                            Based on longitudinal data from our
-                                            testing services, we are able to
+                                            Based on the longitudinal data from
+                                            our testing services, we are able to
                                             develop biomarkers for most chronic
                                             diseases, cancers, and aging. With
                                             every test we are able to see an
                                             individual’s progression towards or
-                                            away from a disease biomarker.
+                                            away from identified disease
+                                            biomarkers.
                                         </p>
                                     ),
                                 }}
@@ -165,14 +158,14 @@ export default function Home() {
                             <Pillar
                                 data={{
                                     header: 'Diagnostics',
-                                    text: 'Using food as medicine to intercept chronic diseases, cancers, & aging.',
+                                    text: 'Early detection and diagnosis of chronic diseases, cancers, & aging.',
                                     back: () => (
                                         <p>
-                                            Our predictive biomarkers give us
-                                            the hypothesis to do clinical
-                                            research in order to identify the
-                                            signature of chronic diseases,
-                                            cancers, and aging.
+                                            Our predictive biomarkers provide us
+                                            with the hypothesis to do clinical
+                                            research and identify the signatures
+                                            of chronic diseases, cancers, and
+                                            aging.
                                         </p>
                                     ),
                                 }}
@@ -329,11 +322,24 @@ export default function Home() {
                     <h3>
                         <strong>OUR MISSION</strong>
                         <br />
-                        As the research arm of Viome, VRI’s mission is to
-                        develop world-leading technology and make it available
-                        to the consumer and patient, so they can take control of
-                        their own health, increase healthspan, and live a great,
-                        worry-free life.
+                        The dominant medical-healthcare industrial paradigm is
+                        rewarded for the management of the symptoms of chronic
+                        diseases, and not for prevention or cures. We are
+                        challenging this paradigm and have successfully
+                        developed over 30 predictive models for Glycemic
+                        response, Obesity, Diabetes, Depression, IBS, and Oral
+                        Cancer, which represent over 50% of chronic diseases.
+                        <br />
+                        <br />
+                        We have &gt;20 Clinical studies in process on the road
+                        to developing diagnostics and interventions for these
+                        diseases. Recently,{' '}
+                        <strong>
+                            Viome’s AI platform has been designated a
+                            Breakthrough Device by The Food and Drug
+                            Administration (FDA) for early detection of oral
+                            cancer and throat cancer.
+                        </strong>
                     </h3>
                 </section>
 
@@ -461,7 +467,7 @@ export default function Home() {
                                 >
                                     <h2>Develop consumer-friendly tests</h2>
                                     <p>
-                                        VRI develops clinical-grade tests for
+                                        We develop clinical-grade tests for
                                         stool, blood, saliva, vaginal samples,
                                         etc., that allow us to better understand
                                         the human body - at a deep molecular
@@ -524,20 +530,19 @@ export default function Home() {
                                         research portfolio
                                     </h2>
                                     <p>
-                                        VRI has a comprehensive clinical
-                                        research program that has already
-                                        enrolled more than 10,000 study
-                                        participants in more than 20 chronic
-                                        disease areas. Our clinical research
-                                        programs generate accurate clinical and
-                                        molecular data from people with
-                                        different conditions and healthy
+                                        Our comprehensive clinical research
+                                        program has already enrolled more than
+                                        10,000 study participants in more than
+                                        20 chronic disease areas. Our clinical
+                                        research programs generate accurate
+                                        clinical and molecular data from people
+                                        with different conditions and healthy
                                         participants. Using artificial
                                         intelligence and machine learning we
                                         gain a deeper insight into the root
                                         causes of chronic diseases. The goals of
-                                        VRI clinical research programs are to
-                                        develop:
+                                        the VLS clinical research programs are
+                                        to develop:
                                     </p>
 
                                     <ul>
@@ -697,13 +702,14 @@ export default function Home() {
                                         styles['vri--home-footer__text-left']
                                     }
                                 >
-                                    VRI develops and improves Viome tests, and
-                                    clinically validates them. Most of the tests
-                                    developed by VRI use RNA sequencing
-                                    (transcriptomic and metatranscriptomic)
-                                    methods for multiple types of human clinical
-                                    samples (stool, blood, saliva, vaginal
-                                    fluid, plasma, etc). VRI regularly uses:
+                                    Our Health Sciences division develops,
+                                    improves, and clinically validates our Viome
+                                    tests. Most of the tests developed by us use
+                                    RNA sequencing (transcriptomic and
+                                    metatranscriptomic) methods for multiple
+                                    types of human clinical samples (stool,
+                                    blood, saliva, vaginal fluid, plasma, etc).
+                                    We regularly use:
                                 </p>
                                 <ul
                                     className={
@@ -735,22 +741,20 @@ export default function Home() {
                                     intelligence (DS/ML/AI)
                                 </h3>
                                 <p>
-                                    VRI uses cloud-based computing
-                                    infrastructure to analyze vast amounts of
-                                    molecular and clinical data every day. Using
-                                    this system we have already built
-                                    machine-learnt models for many chronic
-                                    diseases from large clinical studies, as
-                                    well as symptoms and phenotypes from
-                                    internal big-data analytics, which includes
-                                    prediction of Biological Age and Glycemic
-                                    Response. These data-driven insights offer
-                                    strategies for highly personalized
-                                    nutritional recommendations. Moreover, VRI
-                                    has developed several diagnostic tests of
-                                    high potential clinical value. One such test
-                                    is for diagnosis of oral cancer, for which
-                                    VRI is seeking FDA approval.
+                                    We uses cloud-based computing infrastructure
+                                    to analyze vast amounts of molecular and
+                                    clinical data every day. Using this system
+                                    we have already built machine-learnt models
+                                    for many chronic diseases from large
+                                    clinical studies, as well as symptoms and
+                                    phenotypes from internal big-data analytics,
+                                    which includes prediction of Biological Age
+                                    and Glycemic Response. These data-driven
+                                    insights offer strategies for highly
+                                    personalized nutritional recommendations.
+                                    Moreover, we have developed several
+                                    diagnostic tests of high potential clinical
+                                    value.
                                 </p>
                             </div>
                         </div>
@@ -778,7 +782,7 @@ export default function Home() {
                                     which microbes are actually active and what
                                     they are producing, how might the gut lining
                                     be imapcted, which digestive or immune
-                                    system functions need to be addressed.. Both
+                                    system functions need to be addressed. Both
                                     human and microbial perspectivescombined,
                                     allow us to create specialized integrative
                                     scores that can describe the current state
