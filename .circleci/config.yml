@@ -1,0 +1,153 @@
+version: 2.1
+orbs:
+  aws-eks: circleci/aws-eks@0.2.0
+  aws-ecr: circleci/aws-ecr@6.15.3
+  kubernetes: circleci/kubernetes@0.3.0
+
+jobs:
+  eks_dist:
+    executor: aws-eks/python3
+    parameters:
+      cluster-name:
+        description: |
+          Name of the EKS cluster
+        type: string
+      docker-image-name:
+        description: |
+          Name of the docker image to be deployed
+        type: string
+      version-info:
+        description: |
+          App version information
+        type: string
+      aws-region:
+        description: |
+          AWS region
+        type: string
+        default: ""
+      namespace:
+        description: |
+          K8s Namespace
+        type: string
+      istio-version:
+        description: |
+         Istio version
+        type: string
+    steps:
+      - checkout
+      - run:
+          name: Install Istio
+          command: |
+            curl -sS -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator
+
+            chmod +x ./aws-iam-authenticator
+            echo "export PATH=${PWD}:\$PATH" >> $BASH_ENV
+            pip3 install awscli --upgrade --user
+            ~/.local/bin/aws --version
+            echo "export PATH=/home/circleci/.local/bin:\$PATH" >> $BASH_ENV
+            curl -L https://istio.io/downloadIstio | ISTIO_VERSION=<< parameters.istio-version >> sh -
+            cd istio-*
+            echo "export PATH=${PWD}/bin:\$PATH" >> $BASH_ENV
+            cd ..
+      - run:
+          name: Create deployment manifest
+          command: |
+            BUILD_DATE=$(date '+%Y%m%d%H%M%S')
+            cat k8s.yml |\
+               sed "s|CONTAINER_IMAGE|<< parameters.docker-image-name >>|\
+                g;s|ENVIRONMENT|<< parameters.namespace >>|\
+                g;s|BUILD_DATE_VALUE|$BUILD_DATE|g;s|VERSION_INFO_VALUE|\
+                << parameters.version-info >>|g" > k8s-deployment.yml
+      - run:
+          name: Inject Istio proxy into deployment manifest
+          command: |
+            ~/.local/bin/aws eks update-kubeconfig --name << parameters.cluster-name >>
+            echo "$(istioctl kube-inject -f k8s-deployment.yml)" > k8s-deployment.yml
+      - aws-eks/update-kubeconfig-with-authenticator:
+          cluster-name: << parameters.cluster-name >>
+          install-kubectl: true
+          aws-region: << parameters.aws-region >>
+
+      - kubernetes/create-or-update-resource:
+          resource-file-path: "k8s-deployment.yml"
+
+workflows:
+  version: 2
+  staging_pipeline:
+    jobs:
+      - apprv_push_ecr_test:
+          type: approval
+      - aws-ecr/build-and-push-image:
+          name: docker_image_push_test
+          account-url: AWS_ECR_URL
+          region: AWS_DEFAULT_REGION
+          repo: ${ECR_REPOSITORY_NAME}
+          path: ~/project
+          tag: ${CIRCLE_SHA1}
+          requires:
+            - apprv_push_ecr_test
+      - apprv_eks_dist_test:
+          type: approval
+          requires:
+            - docker_image_push_test
+      - eks_dist:
+          name: eks_dist_test
+          cluster-name: viome-stage
+          aws-region: ${AWS_DEFAULT_REGION}
+          docker-image-name: "${AWS_ECR_URL}/${ECR_REPOSITORY_NAME}:${CIRCLE_SHA1}"
+          version-info: ${CIRCLE_SHA1}
+          namespace: test
+          istio-version: '1.9.0'
+          requires:
+            - apprv_eks_dist_test
+  production_pipeline:
+    jobs:
+      - apprv_push_ecr_prod:
+          type: approval
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only:
+                - /^[0-9]{4}-[0-9]{2}-[0-9]{2}-RC[0-9]*([+]PROD)?$/
+      - aws-ecr/build-and-push-image:
+          name: docker_image_push_prod
+          account-url: AWS_ECR_URL
+          region: AWS_DEFAULT_REGION
+          repo: ${ECR_REPOSITORY_NAME}
+          path: ~/project
+          tag: ${CIRCLE_SHA1}
+          requires:
+            - apprv_push_ecr_prod
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only:
+                - /^[0-9]{4}-[0-9]{2}-[0-9]{2}-RC[0-9]*([+]PROD)?$/
+      - apprv_eks_dist_prod:
+          type: approval
+          requires:
+            - docker_image_push_prod
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only:
+                - /^[0-9]{4}-[0-9]{2}-[0-9]{2}-RC[0-9]*([+]PROD)?$/
+      - eks_dist:
+          name: eks_dist_prod
+          cluster-name: viome-prod
+          aws-region: ${AWS_DEFAULT_REGION}
+          docker-image-name: "${AWS_ECR_URL}/${ECR_REPOSITORY_NAME}:${CIRCLE_SHA1}"
+          version-info: ${CIRCLE_SHA1}
+          namespace: prod
+          istio-version: '1.9.0'
+          requires:
+            - apprv_eks_dist_prod
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only:
+                - /^[0-9]{4}-[0-9]{2}-[0-9]{2}-RC[0-9]*([+]PROD)?$/
