@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: viome-life-sciences
+  namespace: ENVIRONMENT
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: viome-life-sciences
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: viome-life-sciences-v1
+  namespace: ENVIRONMENT
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: viome-life-sciences
+  template:
+    metadata:
+      labels:
+        app: viome-life-sciences
+    spec:
+      containers:
+        - name: viome-life-sciences
+          image: CONTAINER_IMAGE
+          securityContext:
+            privileged: false
+            readOnlyRootFilesystem: false
+            allowPrivilegeEscalation: false
+          ports:
+            - containerPort: 80
+          env:
+            - name: BUILD_DATE
+              value: "BUILD_DATE_VALUE"
