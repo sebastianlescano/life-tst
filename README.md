@@ -1,4 +1,4 @@
-## Getting Started
+## Getting Startedd
 
 For most developers, Node and Yarn is all you'll need.
 
